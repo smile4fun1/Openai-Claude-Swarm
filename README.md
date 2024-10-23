@@ -31,7 +31,7 @@ root/
 ### Task Flow:
 
 1.  **Task Submission**:
-    *   User submits a task via the frontend **Control Panel**.
+    *   User submits a task via the frontend.
     *   The task is sent to the **Claude Intake Agent** through the FastAPI backend.
 
 2.  **Claude 3.5 Intake**:
@@ -41,7 +41,10 @@ root/
 3.  **ChatGPT Aggregation**:
     *   **ChatGPT 4.0** agents handle intermediate processing, aggregation, and summarisation.
     *   Each agent is aware of the full task context via vectorised data storage, allowing them to work in sync.
-
+    *   Each agent knows how to interact with the data and with other agents driven by logic and complex operations that work seamlessly.
+    *   Each agent has specific instructions that are repeatead to it in each prompt to make sure that they adhere to it as master prompt.
+    *   More features coming.
+   
 4.  **Claude 3.5 Output**:
     *   After intermediate processing, **Claude 3.5** retrieves the vectorised data, performs final reasoning, and generates the final response.
     *   The result is delivered back to the user via the **Dashboard** interface.
